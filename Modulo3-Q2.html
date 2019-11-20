@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Array</title>
+        <meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script> 
+        <style>
+            .table{
+                background-color: cadetblue;
+            }
+            body{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>Tabela de Carros</h4>
+        <div class="table"></div>
+
+        <script>
+            const carros =[
+                {nome: 'Cronos', ano:2020, valor: 54990},
+                {nome: 'Toro', ano:2020, valor: 76900},
+                {nome: 'Siena', ano:2020, valor: 37794}
+            ]
+        
+            $(document).ready(function(){
+                const linhas = carros.map ( carro =>{
+                    const tdNome = $('<td>').html(carro.nome).css({'border': 'solid 2px black', 'padding': '5px'})
+                    const tdAno = $('<td>').html(carro.ano).css({'border': 'solid 2px black', 'padding': '5px'})
+                    const tdValor = $('<td>').html(carro.valor).css('border', 'solid 2px black').css('padding', '5px')
+                
+                    return $('<tr>').append(tdNome, tdAno, tdValor)
+                })
+
+                const tabela = $('<table>').append(linhas).css('margin', 'auto')
+                $('.table').append(tabela)          
+
+            })
+        </script>
+    </body>
+</html>

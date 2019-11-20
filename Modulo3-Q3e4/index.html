@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Método Hide</title>
+        <meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <style>
+            ul{
+                color: white;
+                list-style-type: none; 
+            }
+            ul li{
+                padding: 5px;
+            }
+            img{
+                width: 15px;
+                height: 15px;
+            }
+            p{
+                margin: 10px;
+                display: none;
+            }
+            .menu{
+                background-color: brown; 
+                display: flex;
+                height: 30px;
+            }
+            .item1{
+                background-color: red;
+                display: none;
+                padding: 5px;
+
+            }
+            .saiba-mais{
+                width: 400px;
+                margin: auto;
+                padding: 5px;
+              
+            }
+        </style>
+    </head>
+    <body>
+
+        <ul class="menu">  
+            <li id="l1"> Item 1
+                <ul class="item1">
+                    <li>Sub-item1</li>
+                    <li>Sub-item2</li>
+                </ul>
+            </li> 
+            <li class="item2">Item 2</li>
+            <li class="item3">Item 3</li>
+        </ul>
+        
+        <section class="saiba-mais"><h4>Saiba Mais: <button type="submit"><img src="./img/seta.png"></button></h4>
+            
+            <p>
+               Contato: (85) 98609-3461</br>
+               Site: www.saibamais.com.br
+            </p>
+        </section>
+        
+        <script>
+            $(':button').click(function(){
+                $('p').show()
+                $('p').hide(4000)
+            })
+            $('#l1').mouseenter(function(){
+                $('.item1').show()
+            })
+            $('#l1').mouseleave(function(){
+                $('.item1').hide()
+            })
+        </script>
+    </body>
+</html>
